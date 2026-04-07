@@ -4,16 +4,16 @@ BASE_URL="https://android.googlesource.com"
 DEFAULT_BRANCH="master-kernel-build-2021"
 
 declare -A PROJECTS=(
-  ["build"]="kernel/build|$DEFAULT_BRANCH|0|aosp"
-  ["hikey-modules"]="kernel/hikey-modules|android12-5.10|0|aosp"
-  ["common"]="https://github.com/rufnx/android_kernel_common_12-5.10|nethunter|0|custom"
-  ["kernel/configs"]="kernel/configs|$DEFAULT_BRANCH|0|aosp"
-  ["common-modules/virtual-device"]="kernel/common-modules/virtual-device|android12-5.10|0|aosp"
+  ["build"]="kernel/build|$DEFAULT_BRANCH|1|aosp"
+  ["hikey-modules"]="kernel/hikey-modules|android12-5.10|1|aosp"
+  ["common"]="https://github.com/rufnx/android_kernel_common_12-5.10|nethunter|$@|custom"
+  ["kernel/configs"]="kernel/configs|$DEFAULT_BRANCH|1|aosp"
+  ["common-modules/virtual-device"]="kernel/common-modules/virtual-device|android12-5.10|1|aosp"
   ["prebuilts-master/clang/host/linux-x86"]="platform/prebuilts/clang/host/linux-x86|$DEFAULT_BRANCH|1|aosp"
   ["prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8"]="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8|$DEFAULT_BRANCH|1|aosp"
   ["prebuilts/build-tools"]="platform/prebuilts/build-tools|$DEFAULT_BRANCH|1|aosp"
   ["prebuilts/kernel-build-tools"]="kernel/prebuilts/build-tools|$DEFAULT_BRANCH|1|aosp"
-  ["tools/mkbootimg"]="platform/system/tools/mkbootimg|$DEFAULT_BRANCH|0|aosp"
+  ["tools/mkbootimg"]="platform/system/tools/mkbootimg|$DEFAULT_BRANCH|1|aosp"
 )
 
 clone_project() {
