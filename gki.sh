@@ -48,11 +48,13 @@ clone_project "build" \
 
 clone_project "hikey-modules" \
   "kernel/hikey-modules" \
-  "6f0a2a72f849d8bb8e708587582c20019ef91a3c"
+  "6f0a2a72f849d8bb8e708587582c20019ef91a3c" \
+  "1"
 
 clone_project "common" \
   "kernel/common" \
-  "android12-5.10"
+  "android12-5.10" \
+  "1"
 
 clone_project "kernel/configs" \
   "kernel/configs"
@@ -88,4 +90,3 @@ clone_project "kernel/tests" \
   "kernel/tests" \
   "main-kernel" \
   "1"
-
