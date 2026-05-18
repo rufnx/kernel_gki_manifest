@@ -15,14 +15,11 @@ clone_project() {
   local path="$1"
   local name="$2"
   local revision="${3:-$DEFAULT_REVISION}"
-  local clone_depth="${4:-}"
+  local depth_flag="--depth=1"
 
   echo "Cloning $name -> $path (revision: $revision)"
 
   mkdir -p "$(dirname "$path")"
-
-  local depth_flag=""
-  [[ -n "$clone_depth" ]] && depth_flag="--depth=$clone_depth"
 
   if [[ -d "$path/.git" ]]; then
     echo "Already exists, fetching latest..."
@@ -48,13 +45,11 @@ clone_project "build" \
 
 clone_project "hikey-modules" \
   "kernel/hikey-modules" \
-  "6f0a2a72f849d8bb8e708587582c20019ef91a3c" \
-  "1"
+  "6f0a2a72f849d8bb8e708587582c20019ef91a3c" 
 
 clone_project "common" \
   "kernel/common" \
-  "android12-5.10" \
-  "1"
+  "android12-5.10"
 
 clone_project "kernel/configs" \
   "kernel/configs"
@@ -65,28 +60,23 @@ clone_project "common-modules/virtual-device" \
 
 clone_project "prebuilts-master/clang/host/linux-x86" \
   "platform/prebuilts/clang/host/linux-x86" \
-  "$DEFAULT_REVISION" \
-  "1"
+  "$DEFAULT_REVISION" 
 
 clone_project "prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" \
   "platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" \
-  "$DEFAULT_REVISION" \
-  "1"
+  "$DEFAULT_REVISION" 
 
 clone_project "prebuilts/build-tools" \
   "platform/prebuilts/build-tools" \
-  "$DEFAULT_REVISION" \
-  "1"
+  "$DEFAULT_REVISION" 
 
 clone_project "prebuilts/kernel-build-tools" \
   "kernel/prebuilts/build-tools" \
-  "$DEFAULT_REVISION" \
-  "1"
+  "$DEFAULT_REVISION" 
 
 clone_project "tools/mkbootimg" \
   "platform/system/tools/mkbootimg"
 
 clone_project "kernel/tests" \
   "kernel/tests" \
-  "main-kernel" \
-  "1"
+  "main-kernel" 
